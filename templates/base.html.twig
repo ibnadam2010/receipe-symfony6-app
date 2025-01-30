@@ -31,19 +31,14 @@
              {% include "navbar/navbar.html.twig" %}
         {% endblock %}
 
-        {% block header %}
-             {% include "header/header.html.twig" %}
-        {% endblock %}
-
         <div class="container">
             {% block body %}
-            
+                 {% include "header/header.html.twig" %}
             {% endblock %}
         </div>    
+        
         {% block footer %}
-
             {% include "footer/footer-bottom.html.twig" %}
-
         {% endblock %}
     </body>
 </html>
