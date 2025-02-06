@@ -9,7 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}!</h1>
+<br/><br/>
+    {% if app.user %}
+        <h1>Bienvenue dans votre espace utilisateur!</h1>
+        <div class="mb-3">
+           <b> Vous êtes connecté en tant que : </b> {{ app.user.userIdentifier }}
+        </div>
+    {% endif %}
 
 </div>
 {% endblock %}
