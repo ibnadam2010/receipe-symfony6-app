@@ -11,6 +11,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ProductsFixtures extends Fixture
 {
+    private $counter = 1;
     public function __construct(private SluggerInterface $slugger)
     {
         
@@ -29,6 +30,7 @@ class ProductsFixtures extends Fixture
             $category = $this->getReference('cat-'.rand(1, 4),Categories::class);
             $product->setCategorie($category);
             $manager->persist($product);
+            $this->setReference('prod-'.$this->counter,$product); $this->counter++;
 
         }
 

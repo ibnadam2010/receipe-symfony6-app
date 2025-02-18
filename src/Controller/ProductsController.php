@@ -13,8 +13,6 @@ final class ProductsController extends AbstractController
     #[Route('/', name: 'products')]
     public function index(): Response
     {
-        $products = new Products();
-        dd($products);
         return $this->render('products/index.html.twig', [
             'controller_name' => 'Liste des produits',
         ]);
@@ -24,6 +22,8 @@ final class ProductsController extends AbstractController
     public function detail(Products $products): Response
     {
        
+
+        dd($products);
         return $this->render('detail/index.html.twig', [
             'controller_name' => 'Detail du produit',
         ]);
